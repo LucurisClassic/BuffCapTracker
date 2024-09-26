@@ -32,7 +32,11 @@ function SlashCmdList.BCTSC(msg)
 		BCT:ChangeProfile(args)
 		return
 	end
+	category, layout = Settings.RegisterCanvasLayoutCategory(BCT.optionsFrames.BCT, BCT.optionsFrames.BCT.name, BCT.optionsFrames.BCT.name);
+	category.ID = BCT.optionsFrames.BCT.name
+	Settings.RegisterAddOnCategory(category);
+	Settings.OpenToCategory(category.ID)
 	
-	InterfaceOptionsFrame_OpenToCategory(BCT.optionsFrames.BCT)
+	-- InterfaceOptionsFrame_OpenToCategory(BCT.optionsFrames.BCT)
 	InterfaceOptionsFrame_OpenToCategory(BCT.optionsFrames.Setup)
 end
